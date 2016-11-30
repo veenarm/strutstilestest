@@ -1,0 +1,10 @@
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+
+    <definition name="helloWorld" extends="company-template">
+        <put name="body" value="/pages/HelloWorld.jsp" />
+    </definition>
+
+</tiles-definitions>

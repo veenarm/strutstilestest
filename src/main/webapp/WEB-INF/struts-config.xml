@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<!-- Using Tiles :: the forward->Path is defined in the tiles-defs.xml, which defines the jsp and extends the base layout -->
+<struts-config>
+
+    <form-beans>
+        <form-bean name="helloWorldForm" type="au.com.redwoodit.forms.HelloWorldForm"/>
+    </form-beans>
+
+    <action-mappings>
+        <action path="/" type="au.com.redwoodit.actions.HelloWorldAction" name="helloWorldForm">
+            <forward name="success" path="helloWorld"/>
+        </action>
+
+        <action path="/helloWorld" type="au.com.redwoodit.actions.HelloWorldAction" name="helloWorldForm">
+            <forward name="success" path="/HelloWorld.jsp"/>
+        </action>
+
+        <action path="/helloWorldTiles" type="au.com.redwoodit.actions.HelloWorldAction" name="helloWorldForm">
+            <forward name="success" path="helloWorld"/>
+        </action>
+    </action-mappings>
+
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml, /WEB-INF/tiles-defs/pages-tiles.xml"/>
+    </plug-in>
+
+
+</struts-config>
